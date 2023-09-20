@@ -24,23 +24,27 @@ optional arguments:
 
 Created with love by LightFTSO | admin@lightft.so
 ```
-**Make the script executable**:
+**First, let's make the script executable**:
 `` $: chmod +x ./questdb_data_retention.py``
 
  - Save partitions older than 7 days to .csv files in the Users's home folder **AND DROP THE PARTITIONS**
+ 
 ``
 $ ./questdb_data_retention.py --csv --out-folder /home/User/ --host http://192.168.1.201:9000 <table_name> -n 7
 ``
  - Save partitions older than 7 days to .csv files in the Users's home folder **AND DONT DROP THE PARTITIONS**
+ 
 ``
 $ ./questdb_data_retention.py --csv --out-folder /home/User/ --dont-drop --host http://192.168.1.201:9000 <table_name> -n 7
 ``
  - **DROP** partitions older than 30 days (this will **NOT** save .csv files, **DATA WILL BE LOST**)
+ 
 ``
 $ ./questdb_data_retention.py --host http://192.168.1.201:9000 <table_name>
 ``
 
  - Add to crontab, removes tables older than 30 days, executes every day at 01:00 AM. *Use the ``--force``option to not ask for confirmation*
+ 
 ``
 0 1 * * * ./questdb_data_retention.py --host http://192.168.1.201:9000 -f <table_name>
 ``
