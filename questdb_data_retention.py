@@ -17,7 +17,7 @@ with its respective arguments (days to keep, host, table etc)
 """
 
 force_option = False
-host = "http://orangepi5:9000"
+host = ""
 table = "trades"
 time_unit_amount = 30
 time_unit = "d"
