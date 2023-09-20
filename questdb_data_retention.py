@@ -10,15 +10,9 @@ try:
 except ModuleNotFoundError:
     tabulate = None
 
-""" 
-TODO:
-allow argparser to select between save csv, delete partitions by list, delete partitions by age, or a combination
-with its respective arguments (days to keep, host, table etc)
-"""
-
 force_option = False
 host = ""
-table = "trades"
+table = ""
 time_unit_amount = 30
 time_unit = "d"
 out_folder = ""
