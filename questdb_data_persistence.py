@@ -99,7 +99,6 @@ def main():
         description="Facilitates exporting table partitions to .csv and dropping old ones",
         epilog="Created with love by LightFTSO | admin@lightft.so",
     )
-    print("")
 
     url = f"{host}/exec"
     query = f"SELECT name,minTimestamp,maxTimestamp FROM table_partitions('{table}') WHERE minTimestamp <= dateadd('d',-2,now());"
